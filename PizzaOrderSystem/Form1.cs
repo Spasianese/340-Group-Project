@@ -15,7 +15,7 @@ namespace PizzaOrderSystem
         public Form1()
         {
             InitializeComponent();
-            panel2.Hide();
+            orderStatus.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,13 +25,13 @@ namespace PizzaOrderSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel2.Show();
+            orderStatus.Show();
             label1.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            panel2.Hide();
+            orderStatus.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
