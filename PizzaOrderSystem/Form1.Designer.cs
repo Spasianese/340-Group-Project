@@ -36,6 +36,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.orderStatus = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,10 +48,9 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.viewBusinessVolume = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label17 = new System.Windows.Forms.Label();
-
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-
             this.button21 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.viewSupplier = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -83,33 +85,26 @@
             this.button12 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.button19 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-          
-
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel1.SuspendLayout();
             this.orderStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.searchCustomerProfile.SuspendLayout();
             this.viewBusinessVolume.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.viewItemsNSauces.SuspendLayout();
             this.viewSupplier.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -196,6 +191,21 @@
             this.orderStatus.Name = "orderStatus";
             this.orderStatus.Size = new System.Drawing.Size(481, 318);
             this.orderStatus.TabIndex = 2;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dataGridView3.Location = new System.Drawing.Point(21, 59);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(173, 237);
+            this.dataGridView3.TabIndex = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
             // 
             // button6
             // 
@@ -293,10 +303,26 @@
             this.viewBusinessVolume.Controls.Add(this.button20);
             this.viewBusinessVolume.Controls.Add(this.label16);
             this.viewBusinessVolume.Controls.Add(this.dateTimePicker1);
-            this.viewBusinessVolume.Location = new System.Drawing.Point(0, 0);
+            this.viewBusinessVolume.Location = new System.Drawing.Point(262, 63);
             this.viewBusinessVolume.Name = "viewBusinessVolume";
             this.viewBusinessVolume.Size = new System.Drawing.Size(481, 318);
             this.viewBusinessVolume.TabIndex = 4;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(250, 184);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(205, 103);
+            this.dataGridView2.TabIndex = 7;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(250, 64);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(205, 101);
+            this.dataGridView1.TabIndex = 6;
             // 
             // label17
             // 
@@ -308,16 +334,6 @@
             this.label17.TabIndex = 5;
             this.label17.Text = "Orders for Day / Month";
             // 
-
-            // richTextBox5
-            // 
-            this.richTextBox5.Location = new System.Drawing.Point(250, 59);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(205, 228);
-            this.richTextBox5.TabIndex = 4;
-            this.richTextBox5.Text = "";
-            // 
-
             // button21
             // 
             this.button21.Location = new System.Drawing.Point(21, 151);
@@ -422,6 +438,14 @@
             this.viewSupplier.Name = "viewSupplier";
             this.viewSupplier.Size = new System.Drawing.Size(481, 318);
             this.viewSupplier.TabIndex = 6;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(221, 59);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(164, 21);
+            this.comboBox2.TabIndex = 5;
             // 
             // textBox6
             // 
@@ -621,10 +645,8 @@
             // 
             // panel4
             // 
-
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Controls.Add(this.viewBusinessVolume);
             this.panel4.Controls.Add(this.textBox7);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.button19);
@@ -635,6 +657,23 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(481, 318);
             this.panel4.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(46, 115);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(42, 13);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Supply:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(94, 110);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 7;
             // 
             // textBox7
             // 
@@ -692,80 +731,20 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Suppliers";
             // 
-
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(94, 110);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(46, 115);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(42, 13);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "Supply:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(221, 59);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(164, 21);
-            this.comboBox2.TabIndex = 5;
-
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(250, 64);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(205, 101);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(250, 184);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(205, 103);
-            this.dataGridView2.TabIndex = 7;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dataGridView3.Location = new System.Drawing.Point(21, 59);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(173, 237);
-            this.dataGridView3.TabIndex = 5;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.orderStatus);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.viewSupplier);
+            this.Controls.Add(this.searchCustomerProfile);
+            this.Controls.Add(this.orderStatus);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.searchCustomerProfile);
             this.Controls.Add(this.viewBusinessVolume);
             this.Controls.Add(this.viewItemsNSauces);
-            
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -773,10 +752,13 @@
             this.panel1.ResumeLayout(false);
             this.orderStatus.ResumeLayout(false);
             this.orderStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.searchCustomerProfile.ResumeLayout(false);
             this.searchCustomerProfile.PerformLayout();
             this.viewBusinessVolume.ResumeLayout(false);
             this.viewBusinessVolume.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.viewItemsNSauces.ResumeLayout(false);
             this.viewItemsNSauces.PerformLayout();
             this.viewSupplier.ResumeLayout(false);
@@ -787,9 +769,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

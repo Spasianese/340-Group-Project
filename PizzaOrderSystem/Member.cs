@@ -34,6 +34,7 @@ namespace PizzaOrderSystem
 
         public void displayCustomerProfile(RichTextBox box)
         {
+            box.Text = "";
             string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
             MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
             try

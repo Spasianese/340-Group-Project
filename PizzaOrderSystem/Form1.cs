@@ -42,6 +42,7 @@ namespace PizzaOrderSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
+            hidePanels();
             orderStatus.Show();
             label1.Hide();
         }
@@ -128,6 +129,7 @@ namespace PizzaOrderSystem
 
         private void button5_Click(object sender, EventArgs e)
         {
+            hidePanels();
             Console.WriteLine("PAINPINAPIANPFIWN");
             // MasterMember.saveDataToDatabase();
         }
@@ -135,6 +137,7 @@ namespace PizzaOrderSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
+            hidePanels();
             searchCustomerProfile.Show();
             member memberObj = new member();
             memberObj.displayCustomerProfile(richTextBox2);
@@ -179,6 +182,7 @@ namespace PizzaOrderSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
+            hidePanels();
             (DataTable totalOrdersData, DataTable ordersByStatusData) = GetBusinessData();
 
             dataGridView1.DataSource = totalOrdersData;
