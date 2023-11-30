@@ -39,7 +39,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.searchCustomerProfile = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
@@ -47,6 +46,11 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.viewBusinessVolume = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.viewItemsNSauces = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
@@ -83,12 +87,10 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel1.SuspendLayout();
             this.orderStatus.SuspendLayout();
             this.searchCustomerProfile.SuspendLayout();
@@ -98,6 +100,9 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,6 +144,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "View Business Volume";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -173,10 +179,10 @@
             // 
             // orderStatus
             // 
+            this.orderStatus.Controls.Add(this.dataGridView3);
             this.orderStatus.Controls.Add(this.button6);
             this.orderStatus.Controls.Add(this.label4);
             this.orderStatus.Controls.Add(this.label3);
-            this.orderStatus.Controls.Add(this.richTextBox1);
             this.orderStatus.Controls.Add(this.label2);
             this.orderStatus.Location = new System.Drawing.Point(265, 60);
             this.orderStatus.Name = "orderStatus";
@@ -210,14 +216,6 @@
             this.label3.Size = new System.Drawing.Size(104, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Order # Status";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(40, 70);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(140, 226);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
             // 
             // label2
             // 
@@ -277,16 +275,62 @@
             // 
             // viewBusinessVolume
             // 
+            this.viewBusinessVolume.Controls.Add(this.dataGridView2);
+            this.viewBusinessVolume.Controls.Add(this.dataGridView1);
             this.viewBusinessVolume.Controls.Add(this.label17);
-            this.viewBusinessVolume.Controls.Add(this.richTextBox5);
             this.viewBusinessVolume.Controls.Add(this.button21);
             this.viewBusinessVolume.Controls.Add(this.button20);
             this.viewBusinessVolume.Controls.Add(this.label16);
             this.viewBusinessVolume.Controls.Add(this.dateTimePicker1);
-            this.viewBusinessVolume.Location = new System.Drawing.Point(265, 60);
+            this.viewBusinessVolume.Location = new System.Drawing.Point(0, 0);
             this.viewBusinessVolume.Name = "viewBusinessVolume";
             this.viewBusinessVolume.Size = new System.Drawing.Size(481, 318);
             this.viewBusinessVolume.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(247, 23);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(153, 17);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Orders for Day / Month";
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(21, 151);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(111, 23);
+            this.button21.TabIndex = 3;
+            this.button21.Text = "View Month\'s Order";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(17, 110);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(115, 23);
+            this.button20.TabIndex = 2;
+            this.button20.Text = "View Day\'s Order";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(12, 13);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(149, 17);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "View Buisness Volume";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(15, 64);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 0;
             // 
             // viewItemsNSauces
             // 
@@ -559,6 +603,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.viewBusinessVolume);
             this.panel4.Controls.Add(this.textBox7);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.button19);
@@ -623,58 +668,36 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Suppliers";
             // 
-            // dateTimePicker1
+            // dataGridView1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(15, 64);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(250, 64);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(205, 101);
+            this.dataGridView1.TabIndex = 6;
             // 
-            // label16
+            // dataGridView2
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 13);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(149, 17);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "View Buisness Volume";
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(250, 184);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(205, 103);
+            this.dataGridView2.TabIndex = 7;
             // 
-            // button20
+            // dataGridView3
             // 
-            this.button20.Location = new System.Drawing.Point(17, 110);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(115, 23);
-            this.button20.TabIndex = 2;
-            this.button20.Text = "View Day\'s Order";
-            this.button20.UseVisualStyleBackColor = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dataGridView3.Location = new System.Drawing.Point(21, 59);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(173, 237);
+            this.dataGridView3.TabIndex = 5;
             // 
-            // button21
+            // Column1
             // 
-            this.button21.Location = new System.Drawing.Point(21, 151);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(111, 23);
-            this.button21.TabIndex = 3;
-            this.button21.Text = "View Month\'s Order";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox5
-            // 
-            this.richTextBox5.Location = new System.Drawing.Point(250, 59);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(205, 228);
-            this.richTextBox5.TabIndex = 4;
-            this.richTextBox5.Text = "";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(247, 23);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(153, 17);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Orders for Day / Month";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
             // 
             // Form1
             // 
@@ -682,14 +705,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.viewBusinessVolume);
+            this.Controls.Add(this.orderStatus);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.viewSupplier);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.viewItemsNSauces);
             this.Controls.Add(this.searchCustomerProfile);
-            this.Controls.Add(this.orderStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -711,6 +733,9 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -730,7 +755,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox1;
@@ -774,11 +798,14 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.RichTextBox richTextBox5;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
     }
 }
 
