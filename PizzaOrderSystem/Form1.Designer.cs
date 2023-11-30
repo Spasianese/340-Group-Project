@@ -47,6 +47,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.viewBusinessVolume = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
+
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+
             this.button21 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -58,7 +61,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.viewSupplier = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -87,6 +89,11 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
+          
+
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -135,6 +142,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Search Customer Profiles";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -246,6 +254,7 @@
             this.button7.TabIndex = 3;
             this.button7.Text = "Search";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // textBox1
             // 
@@ -257,8 +266,10 @@
             // 
             // richTextBox2
             // 
+            this.richTextBox2.HideSelection = false;
             this.richTextBox2.Location = new System.Drawing.Point(13, 64);
             this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(167, 232);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
@@ -297,6 +308,16 @@
             this.label17.TabIndex = 5;
             this.label17.Text = "Orders for Day / Month";
             // 
+
+            // richTextBox5
+            // 
+            this.richTextBox5.Location = new System.Drawing.Point(250, 59);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(205, 228);
+            this.richTextBox5.TabIndex = 4;
+            this.richTextBox5.Text = "";
+            // 
+
             // button21
             // 
             this.button21.Location = new System.Drawing.Point(21, 151);
@@ -391,7 +412,7 @@
             // 
             // viewSupplier
             // 
-            this.viewSupplier.Controls.Add(this.comboBox1);
+            this.viewSupplier.Controls.Add(this.comboBox2);
             this.viewSupplier.Controls.Add(this.textBox6);
             this.viewSupplier.Controls.Add(this.button16);
             this.viewSupplier.Controls.Add(this.button15);
@@ -402,19 +423,11 @@
             this.viewSupplier.Size = new System.Drawing.Size(481, 318);
             this.viewSupplier.TabIndex = 6;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(309, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(76, 21);
-            this.comboBox1.TabIndex = 5;
-            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(153, 28);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(150, 20);
+            this.textBox6.Size = new System.Drawing.Size(232, 20);
             this.textBox6.TabIndex = 4;
             // 
             // button16
@@ -425,6 +438,7 @@
             this.button16.TabIndex = 3;
             this.button16.Text = "Edit";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button15
             // 
@@ -434,11 +448,15 @@
             this.button15.TabIndex = 2;
             this.button15.Text = "Search";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // richTextBox4
             // 
+            this.richTextBox4.AutoWordSelection = true;
+            this.richTextBox4.HideSelection = false;
             this.richTextBox4.Location = new System.Drawing.Point(15, 59);
             this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
             this.richTextBox4.Size = new System.Drawing.Size(138, 175);
             this.richTextBox4.TabIndex = 1;
             this.richTextBox4.Text = "";
@@ -603,6 +621,9 @@
             // 
             // panel4
             // 
+
+            this.panel4.Controls.Add(this.label18);
+            this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.viewBusinessVolume);
             this.panel4.Controls.Add(this.textBox7);
             this.panel4.Controls.Add(this.label15);
@@ -617,7 +638,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(90, 72);
+            this.textBox7.Location = new System.Drawing.Point(94, 71);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(284, 20);
             this.textBox7.TabIndex = 6;
@@ -639,6 +660,7 @@
             this.button19.TabIndex = 4;
             this.button19.Text = "Cancel";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button17
             // 
@@ -648,6 +670,7 @@
             this.button17.TabIndex = 3;
             this.button17.Text = "Delete";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button18
             // 
@@ -657,6 +680,7 @@
             this.button18.TabIndex = 2;
             this.button18.Text = "Update";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // label14
             // 
@@ -668,6 +692,32 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Suppliers";
             // 
+
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(94, 110);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(46, 115);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(42, 13);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Supply:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(221, 59);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(164, 21);
+            this.comboBox2.TabIndex = 5;
+
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -698,6 +748,7 @@
             // 
             this.Column1.HeaderText = "Column1";
             this.Column1.Name = "Column1";
+
             // 
             // Form1
             // 
@@ -708,10 +759,13 @@
             this.Controls.Add(this.orderStatus);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.viewSupplier);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.viewItemsNSauces);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.searchCustomerProfile);
+            this.Controls.Add(this.viewBusinessVolume);
+            this.Controls.Add(this.viewItemsNSauces);
+            
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -768,7 +822,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel viewSupplier;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button15;
@@ -802,6 +855,9 @@
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;

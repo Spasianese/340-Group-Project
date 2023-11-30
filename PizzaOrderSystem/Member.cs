@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace PizzaOrderSystem
 {
@@ -31,23 +32,20 @@ namespace PizzaOrderSystem
         {
         }
 
-        public void saveDataToDatabase()
+        public void displayCustomerProfile(RichTextBox box)
         {
-            //int localID = Int32.Parse(textBox1.Text);
-            //string localName = textBox2.Text;
             string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
             MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
-                string sql = "SELECT * FROM wongmart_member";
+                string sql = "SELECT username FROM wongmart_member";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
                 MySqlDataReader myReader = cmd.ExecuteReader();
-                if (myReader.Read())
+                while (myReader.Read())
                 {
-                    Console.WriteLine("Printing SQL info...");
-                    Console.WriteLine(myReader["name"]);
+                    box.Text += myReader["username"].ToString() + "\n";
                 }
                 myReader.Close();
 
@@ -62,6 +60,35 @@ namespace PizzaOrderSystem
             Console.WriteLine("Done.");
 
         }
+
+        public void searchCustomerProfile(RichTextBox box, TextBox searchBar)
+        {
+            string connStr = "server=csitmariadb.eku.edu;user=student;database=csc340_db;port=3306;password=Maroon@21?;";
+            MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
+            try
+            {
+                Console.WriteLine("Connecting to MySQL...");
+                conn.Open();
+                string sql = "SELECT name FROM wongmart_suppliers WHERE name LIKE @input";
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@input", "%" + searchBar.Text + "%"); // Add parameter before executing
+                MySqlDataReader myReader = cmd.ExecuteReader();
+                box.Text = "";
+                while (myReader.Read())
+                {
+                    Console.WriteLine("struggling");
+                    box.Text += myReader["name"].ToString() + "\n";
+                }
+                myReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            conn.Close();
+            Console.WriteLine("Done.");
+        }
+
 
         public string getName()
         {
